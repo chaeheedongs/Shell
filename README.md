@@ -7,6 +7,8 @@
 ## Index
 * [sed](#sed)
   * [특정 라인 출력하기](#특정-라인-출력하기)
+* [vim](#vim)
+  * [tab을 space로 변경하는 방법](#tab을-space로-변경하는-방법)
 ---
 
 <br/><br/><br/>
@@ -102,5 +104,37 @@ $ sed -n '/^OLDPWD=/'p sed-test
 OLDPWD=/c/Users/admin/Desktop
 ```
 
-<br/>
+<br/><br/><br/>
+
+
+
+## vim
+
+<br/><br/>
+
+
+
+## tab을 space로 변경하는 방법
+
+```shell
+# 사용자 홈 디렉토리에서 .vimrc 생성 후 아래 내용 입력
+~$ vi .vimrc
+set smartindent
+set tabstop=4
+set expandtab
+set shiftwidth=4
+...
+
+# 저장 후 종료
+: wq
+
+
+
+# 프로필 적용
+~$ . ~/.vimrc 
+```
+
+<br/><br/><br/>
+
+
 
