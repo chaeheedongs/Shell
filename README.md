@@ -5,11 +5,76 @@
 
 
 ## Index
+* [syntax](#syntax)
+  * [select](#select)
 * [sed](#sed)
   * [특정 라인 출력하기](#특정-라인-출력하기)
 * [vim](#vim)
   * [tab을 space로 변경하는 방법](#tab을-space로-변경하는-방법)
 ---
+
+<br/><br/><br/>
+
+
+## syntax
+
+<br/><br/>
+
+
+
+## select
+
+사용자가 선택을 할 수 있는 제어문이다.  
+PS3 환경 변수로 select문의 메세지를 설정할 수 있다.  
+PS3의 기본 값은 #? 이다.
+
+> select value in < Arrays > ; do  
+> &nbsp;&nbsp;&nbsp;&nbsp; // ...do logic  
+> done
+
+```shell
+# select에 사용될 배열 생성
+arr=("Apple" "Banana" "Coconut")
+
+# select prompt message string setting (default: #?)
+PS3="select prompt string: "
+
+select value in ${arr[@]}; do
+  echo "value: ${value}"
+  break
+done
+```
+
+<br/>
+
+### 응용 방식
+
+select문과 case문을 활용한 로직 처리
+
+```shell
+# select에 사용될 배열 생성
+arr=("Apple" "Banana" "Coconut")
+
+# select prompt message string setting (default: #?)
+PS3="select prompt string: "
+
+select value in ${arr[@]}; do
+  case $value in
+    ${arr[0]})
+      echo "Choose Apple"
+      break ;;
+    ${arr[1]})
+      echo "Choose Banana"
+      break ;;
+    ${arr[2]})
+      echo "Choose Coconut"
+      break ;;
+    *)
+      echo
+      continue ;;
+  esac
+done
+```
 
 <br/><br/><br/>
 
