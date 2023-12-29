@@ -6,6 +6,7 @@
 
 ## Index
 * [syntax](#syntax)
+  * [if else](#if-else)
   * [select](#select)
 * [sed](#sed)
   * [특정 라인 출력하기](#특정-라인-출력하기)
@@ -19,6 +20,78 @@
 ## syntax
 
 <br/><br/>
+
+
+
+## if else
+
+조건에 따라 분기를 할 수 있는 제어문이다.
+
+> if [[ 조건문 ]]; then  
+> &nbsp;&nbsp;&nbsp;&nbsp; // ...do logic  
+> done
+
+```shell
+VALUE=5
+
+if [[ $VALUE -gt 5 ]]; then
+  echo "greater then 5"
+elif [[ $VALUE -lt 5 ]]; then
+  echo "less then 5"
+else
+  echo "equals 5"
+fi
+```
+
+<br/><br/><br/>
+
+
+
+## case
+
+값에 따라 분기를 할 수 있는 제어문이다.
+
+> case value in  
+> &nbsp;&nbsp;&nbsp;&nbsp; // ...do logic  
+> done
+
+```shell
+VALUE="Apple"
+
+case $VALUE in
+  "Apple")
+    echo "Apple" ;;
+  "Banana")
+    echo "Banana" ;;
+  "Coconut")
+    echo "Coconut" ;;
+  *)
+    echo "etc" ;;
+esac
+```
+
+<br/>
+
+### 응용 방식
+
+정규식을 사용한 case 처리
+
+```shell
+VALUE=""
+
+case $VALUE in
+  "A*")
+    echo "Start with A"
+  "B*")
+    echo "Start with B"
+  "[0-9]*")
+    echo "Number"
+  "[a-zA-Z]*")
+    eco "String"
+esac
+```
+
+<br/><br/><br/>
 
 
 
