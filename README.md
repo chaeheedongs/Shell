@@ -7,6 +7,7 @@
 ## Index
 * [syntax](#syntax)
   * [if else](#if-else)
+  * [case](#case)
   * [select](#select)
 * [sed](#sed)
   * [특정 라인 출력하기](#특정-라인-출력하기)
